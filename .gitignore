@@ -1,1 +1,4 @@
 *~
+/persistency/target/
+/web/target/
+/business/target/

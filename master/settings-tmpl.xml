@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    
+    <!-- http://maven.apache.org/ref/3.0.5/maven-settings/settings.html -->
+  
+    <localRepository>../localMirror</localRepository>
+
+    <offline>false</offline>
+
+    <mirrors>
+        <mirror>
+            <id>central</id>
+            <mirrorOf>*</mirrorOf>
+            <url>http://repo1.maven.org/maven2</url>
+        </mirror>
+    </mirrors>
+	
+    <profiles>
+        <profile>
+            <activation>
+                <activeByDefault/>
+                <id>maven-central</id>
+                <repositories>
+                    <repository>
+                        <id>central</id>
+                        <url>http://repo1.maven.org/maven2</url>
+                        <releases>
+                            <enabled>true</enabled>
+                        </releases>
+                        <snapshots>
+                            <enabled>false</enabled>
+                        </snapshots>
+                    </repository>    
+                </repositories>
+                <pluginRepositories>
+                    <pluginRepository>
+                        <id>central</id>
+                        <url>http://repo1.maven.org/maven2</url>
+                        <releases>
+                            <enabled>true</enabled>
+                        </releases>
+                        <snapshots>
+                            <enabled>false</enabled>
+                        </snapshots>
+                    </pluginRepository>
+                </pluginRepositories>
+            </activation>
+        </profile>
+    </profiles>
+</settings>

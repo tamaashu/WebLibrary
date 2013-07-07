@@ -6,8 +6,9 @@
   <modelVersion>4.0.0</modelVersion>
                             
   <groupId>hu.tamaas</groupId>
-  <artifactId>weblibrary</artifactId>
+  <artifactId>master</artifactId>
   <version>0.1</version>
+  <packaging>pom</packaging>
 
   <modules>
     <module>../persistency</module>
