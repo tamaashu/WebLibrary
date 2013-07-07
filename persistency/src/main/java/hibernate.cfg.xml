@@ -6,23 +6,6 @@
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <!-- Enable Hibernate's automatic session context management -->
         <property name="current_session_context_class">thread</property>
-        <mapping class="db.dto.Config"/>
-        <mapping class="db.dto.Timezone"/>
-        <mapping class="db.dto.User"/>
-        <mapping class="db.dto.Page"/>
-        <mapping class="db.dto.PageVersion"/>
-        <mapping class="db.dto.UserGroup"/>
-        <mapping class="db.dto.Right"/>
-        <mapping class="db.dto.PageGroupRight"/>
-        <mapping class="db.dto.PageUserRight"/>
-        <mapping class="db.dto.Portal"/>
-        <mapping class="db.dto.PortalGroupRight"/>
-        <mapping class="db.dto.PortalUserRight"/>
-        <mapping class="db.dto.recipe.UnitType"/>
-        <mapping class="db.dto.recipe.Unit"/>
-        <mapping class="db.dto.recipe.Stock"/>
-        <mapping class="db.dto.recipe.Ingredient"/>
-        <mapping class="db.dto.recipe.RecipeType"/>
-        <mapping class="db.dto.recipe.Recipe"/>
+        <mapping class="hu.tamaas.db.entities.User"/>
     </session-factory>
 </hibernate-configuration>
