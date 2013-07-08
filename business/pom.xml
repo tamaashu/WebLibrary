@@ -8,7 +8,7 @@
   <packaging>ear</packaging>
 
   <parent>
-    <groupId>hu.tamaas</groupId>
+    <groupId>hu.tamaas.weblibrary</groupId>
     <artifactId>master</artifactId>
     <version>0.1</version>
     <relativePath>../master</relativePath>

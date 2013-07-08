@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <!-- page title param passed in by param -->
+    <title>#{pageTitle}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="hu" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="/WebLibrary/resources/css/xp/xp.css" rel="stylesheet" type="text/css"/>
+    <link href="/WebLibrary/resources/override.css" rel="stylesheet" type="text/css"/>
+    <link href="/WebLibrary/resources/stylesheet.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body>
+    <h:panelGroup styleClass="page">
+        <h:panelGroup styleClass="Header">
+            <ui:include src="/WEB-INF/common/Header.xhtml"/>
+        </h:panelGroup>
+        <h:panelGroup styleClass="Navigation">
+            <ui:include src="/WEB-INF/wiki/Navigation.xhtml"/>
+        </h:panelGroup>
+        <h:panelGroup styleClass="Content">
+            <ui:insert name="content">
+                Default Content
+            </ui:insert>
+        </h:panelGroup>
+        <h:panelGroup styleClass="Footer">
+            <ui:include src="/WEB-INF/common/Footer.xhtml"/>
+        </h:panelGroup>
+    </h:panelGroup>
+</h:body>
+</html>

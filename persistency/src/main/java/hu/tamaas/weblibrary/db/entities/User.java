@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package hu.tamaas.db.entities;
+package hu.tamaas.weblibrary.db.entities;
 
 import java.io.Serializable;
 import java.security.MessageDigest;

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="/templates/main.xhtml"
+             xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:f="http://java.sun.com/jsf/core"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:wl="http://java.sun.com/jsf/composite/weblibrary">
+    <!-- params for page titles-->
+    <ui:param name="pageTitle" value="" />
+    <ui:define name="content">
+        <h:form id="form1">
+           <wl:test anything="text" />
+        </h:form>
+    </ui:define>
+</ui:composition>
