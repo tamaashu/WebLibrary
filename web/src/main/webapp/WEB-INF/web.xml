@@ -28,10 +28,6 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.jsf</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Resource Servlet</servlet-name>
-        <url-pattern>/xmlhttp/*</url-pattern>
-    </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>

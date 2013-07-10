@@ -50,7 +50,7 @@
         max-pool-size="8"  steady-pool-size="2">
         <property name="serverName" value="127.0.0.1"/>
         <property name="portNumber" value="5432"/>
-        <property name="databaseName" value="weblibrary"/>
+        <property name="databaseName" value="weblibrarydb"/>
         <property name="user" value="username"/>
         <property name="password" value="password"/>
     </jdbc-connection-pool>
