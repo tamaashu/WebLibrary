@@ -26,4 +26,4 @@ exit:
 * start Glassfish with [GLASSFISH root dir]/glassfish/bin/startserv --debug=true
 * activate datasource [GLASSFISH root dir]/glassfish/bin/asadmin --port 4848 add-resources [GLASSFISH_root_dir]/glassfish/domains/domain1/config/weblibrary_datasource.xml
 * build master project and deploy web.war
-* open it on https://127.0.0.1/[context_root_given_during_deploy]/index.xhtml
+* open it on https://127.0.0.1:8181/[context_root_given_during_deploy]/index.xhtml
