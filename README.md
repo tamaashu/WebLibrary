@@ -7,7 +7,7 @@
 # How to set up your environment
 
 * Download and install Glassfish application server
-* Download and copy JDBC driver into [GLASSFISH root dir]/glassfish/domains/domain1/lib/
+* Download and copy JDBC driver into [GLASSFISH_root_dir]/glassfish/domains/domain1/lib/
 * Download and install PostgreSQL Server
 * add your_user to the DB 
 
@@ -20,10 +20,10 @@ psql -U [username] -d weblibrarydb
 exit:
 \q
 
-* Edit username and password in [project directory]/master/config/weblibrary_datasource.xml
-* copy [project directory]/master/config/weblibrary_datasource.xml into [GLASSFISH root dir]/glassfish/domains/domain1/config/
+* Edit username and password in [project_directory]/master/config/weblibrary_datasource.xml
+* copy [project directory]/master/config/weblibrary_datasource.xml into [GLASSFISH_root_dir]/glassfish/domains/domain1/config/
 
 * start Glassfish with [GLASSFISH root dir]/glassfish/bin/startserv --debug=true
-* activate datasource [GLASSFISH root dir]/glassfish/bin/asadmin --port 4848 add-resources [GLASSFISH root dir]/glassfish/domains/domain1/config/weblibrary_datasource.xml
+* activate datasource [GLASSFISH root dir]/glassfish/bin/asadmin --port 4848 add-resources [GLASSFISH_root_dir]/glassfish/domains/domain1/config/weblibrary_datasource.xml
 * build master project and deploy web.war
-* open it on https://127.0.0.1/[context root given during deploy]/index.xhtml
+* open it on https://127.0.0.1/[context_root_given_during_deploy]/index.xhtml
