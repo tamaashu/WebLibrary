@@ -4,6 +4,8 @@
  */
 package hu.tamaas.weblibrary.web.model;
 
+import hu.tamaas.weblibrary.db.entities.User;
+import hu.tamaas.weblibrary.db.services.UserDataService;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
 import org.apache.log4j.Logger;
@@ -15,5 +17,10 @@ import org.apache.log4j.Logger;
 @Model
 @SessionScoped
 public class LibraryFlowModel extends BaseFlowModel {
-    private static Logger LOG = Logger.getLogger(LibraryFlowModel.class.getName()); 
+    protected static Logger LOG = Logger.getLogger(LibraryFlowModel.class); 
+    
+    public User getUser() {
+        User user = UserDataService.getInstance().getUser(1L);
+        return user;
+    }
 }

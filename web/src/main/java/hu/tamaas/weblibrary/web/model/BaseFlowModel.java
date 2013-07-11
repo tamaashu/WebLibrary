@@ -11,5 +11,5 @@ import org.apache.log4j.Logger;
  * @author edi
  */
 public class BaseFlowModel extends BaseModel {
-    private static Logger LOG = Logger.getLogger(BaseFlowModel.class.getName()); 
+    protected static Logger LOG = Logger.getLogger(BaseFlowModel.class); 
 }

@@ -12,5 +12,5 @@ import org.apache.log4j.Logger;
  * @author edi
  */
 public class BaseModel implements Serializable {
-    private static Logger LOG = Logger.getLogger(PropertyModel.class.getName()); 
+    protected static Logger LOG = Logger.getLogger(PropertyModel.class); 
 }

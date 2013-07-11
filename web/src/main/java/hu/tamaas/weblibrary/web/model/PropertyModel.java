@@ -15,5 +15,5 @@ import org.apache.log4j.Logger;
 @Model
 @SessionScoped
 public class PropertyModel extends BaseModel {
-    private static Logger LOG = Logger.getLogger(PropertyModel.class.getName()); 
+    protected static Logger LOG = Logger.getLogger(PropertyModel.class); 
 }

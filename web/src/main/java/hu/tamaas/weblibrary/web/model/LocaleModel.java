@@ -16,7 +16,7 @@ import org.apache.log4j.Logger;
 @Model
 @SessionScoped
 public class LocaleModel extends BaseModel {
-    private static Logger LOG = Logger.getLogger(LocaleModel.class.getName()); 
+    protected static Logger LOG = Logger.getLogger(LocaleModel.class); 
     
     private Locale locale = Locale.ENGLISH;
 
