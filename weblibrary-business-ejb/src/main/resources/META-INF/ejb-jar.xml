@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd"
+    version="3.1">
+    <display-name>UserServiceBean</display-name>
+    <enterprise-beans>
+        <message-driven>
+            <ejb-name>UserServiceBean</ejb-name>
+            <ejb-class>hu.tamaas.weblibrary.business.ejb.service.UserServiceBean</ejb-class>
+            <transaction-type>Container</transaction-type>
+        </message-driven>
+    </enterprise-beans>
+</ejb-jar>

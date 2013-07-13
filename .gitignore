@@ -1,5 +1,6 @@
 *~
-/persistency/target/
-/web/target/
-/business/target/
-/web/faces-config.NavData
+/weblibrary-persistency/target/
+/weblibrary-business-ejb/target/
+/weblibrary-business-ear/target/
+/weblibrary-web/target/
+/weblibrary-web/faces-config.NavData
