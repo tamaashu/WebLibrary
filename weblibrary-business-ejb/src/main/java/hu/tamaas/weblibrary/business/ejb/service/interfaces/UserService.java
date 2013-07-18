@@ -14,7 +14,7 @@ import javax.ejb.Remote;
 @Remote
 public interface UserService {
     
-    public static final String BEAN_NAME = "hu.tamaas.weblibrary.business.ejb.service.UserService.1.0";
+    public static final String BEAN_NAME = "ejb/UserServiceBean";
     
     public User getUser(Long userId);
 }

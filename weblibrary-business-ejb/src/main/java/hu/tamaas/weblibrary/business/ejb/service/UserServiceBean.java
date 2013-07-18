@@ -8,23 +8,17 @@ import hu.tamaas.weblibrary.business.ejb.service.interfaces.UserService;
 import hu.tamaas.weblibrary.persistence.dataservice.UserDataService;
 import hu.tamaas.weblibrary.persistence.dataservice.WebLibraryDataServiceFactory;
 import hu.tamaas.weblibrary.persistence.entity.User;
-import javax.ejb.EJB;
-import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.apache.log4j.Logger;
 
 /**
  *
  * @author edi
  */
-@Stateless//(name = UserService.BEAN_NAME, mappedName = UserService.BEAN_NAME)
-@Remote
-//@EJB(beanName="UserServiceBean", beanInterface=UserService.class)
+@Stateless//(name="UserServiceBean", mappedName = UserService.BEAN_NAME)
 public class UserServiceBean implements UserService {
 
-    private static Logger LOG = Logger.getLogger(UserServiceBean.class);
     @PersistenceContext(unitName = "weblibrary-unit")
     private EntityManager entityManager;
 

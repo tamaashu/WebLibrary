@@ -25,7 +25,7 @@
             <groupId>hu.tamaas.weblibrary</groupId>
             <artifactId>weblibrary-business-ejb</artifactId>
             <version>0.1</version>
-            <type>ejb-client</type>
+            <classifier>client</classifier>
         </dependency>
         
         <dependency>

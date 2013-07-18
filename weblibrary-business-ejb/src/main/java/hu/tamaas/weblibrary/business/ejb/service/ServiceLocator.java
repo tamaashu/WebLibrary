@@ -25,7 +25,7 @@ public class ServiceLocator {
         Context context = null;
         try {
             Properties props = new Properties();
-            props.put(Context.INITIAL_CONTEXT_FACTORY, CONTEXT_FACTORY);
+            //props.put(Context.INITIAL_CONTEXT_FACTORY, CONTEXT_FACTORY);
             context = new InitialContext(props);
             result = context.lookup(jndiName);
 
@@ -47,7 +47,9 @@ public class ServiceLocator {
     }
 
     public UserService getUserService() throws NamingException {
-        String jndiName = UserService.BEAN_NAME + "#hu.tamaas.weblibrary.business.ejb.service.interfaces.UserService";
+        String jndiName = //UserService.BEAN_NAME + "#hu.tamaas.weblibrary.business.ejb.service.interfaces.UserService";
+          //java:global/weblibrary-business-ear-0.1/weblibrary-business-ejb-0.1/UserServiceBean
+          "java:global/weblibrary-business-ear-0.1/weblibrary-business-ejb-0.1/UserServiceBean!hu.tamaas.weblibrary.business.ejb.service.interfaces.UserService";
         UserService service = (UserService) lookup(jndiName);
         return service;
     }
