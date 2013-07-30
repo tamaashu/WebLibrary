@@ -6,11 +6,16 @@ package hu.tamaas.weblibrary.web.model;
 
 //import hu.tamaas.weblibrary.business.ejb.service.ServiceLocator;
 import hu.tamaas.weblibrary.business.ejb.service.interfaces.HelloService;
+import hu.tamaas.weblibrary.persistence.dataservice.UserDataService;
+import hu.tamaas.weblibrary.persistence.dataservice.WebLibraryDataServiceFactory;
 import hu.tamaas.weblibrary.persistence.entity.User;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import org.apache.log4j.Logger;
 
 /**
@@ -27,17 +32,23 @@ public class LibraryFlowModel extends BaseFlowModel {
 
     protected static Logger LOG = Logger.getLogger(LibraryFlowModel.class);
 
-    /*public User getUser() {
+    public User getUser() {
         LOG.debug("getUser begin");
         try{
             if (user == null) {
-                UserService userService = null;
+                //FIXME we have to use the EJB
+                /*UserService userService = null;
                 try {
-                    userService = (UserService) new InitialContext().lookup("hu.tamaas.weblibrary.business.ejb.service.interfaces.UserService#hu.tamaas.weblibrary.business.ejb.service.interfaces.UserService");
+                    userService = (UserService) new InitialContext().lookup(UserService.BEAN_NAME + "#" + UserService.BEAN_NAME);
                 } catch (NamingException ex) {
-                    java.util.logging.Logger.getLogger(LibraryFlowModel.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
+                    LOG.error(ex);
+                }*/
+                
+                EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory( "weblibrary-unit" );
+                EntityManager entityManager = entityManagerFactory.createEntityManager();
+                UserDataService userService = WebLibraryDataServiceFactory.getUserDataService(entityManager);
+                
+                
                 /*try {
                  userService = new ServiceLocator().getUserService();
                  setLoaded(true);
@@ -45,7 +56,7 @@ public class LibraryFlowModel extends BaseFlowModel {
                  LOG.error(ex);
                  }*/
 
-       /*         if (userService == null) {
+                if (userService == null) {
                     return new User();
                 }
 
@@ -56,7 +67,7 @@ public class LibraryFlowModel extends BaseFlowModel {
         finally {
             LOG.debug("getUser end");
         }
-    }*/
+    }
     
     public String getHello() {
         LOG.debug("getHello begin");

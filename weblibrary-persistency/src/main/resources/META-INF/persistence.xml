@@ -3,8 +3,8 @@
   <persistence-unit name="weblibrary-unit" transaction-type="JTA">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <jta-data-source>jdbc/webLibraryDS</jta-data-source>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <!--class>hu.tamaas.weblibrary.persistence.entity.User</class-->
+    <!--exclude-unlisted-classes>false</exclude-unlisted-classes-->
+    <class>hu.tamaas.weblibrary.persistence.entity.User</class>
     <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
     <validation-mode>CALLBACK</validation-mode>
     <properties>
