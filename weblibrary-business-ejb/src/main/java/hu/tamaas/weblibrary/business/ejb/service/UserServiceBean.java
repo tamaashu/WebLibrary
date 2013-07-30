@@ -16,12 +16,13 @@ import javax.persistence.PersistenceContext;
  *
  * @author edi
  */
-@Stateless//(name="UserServiceBean", mappedName = UserService.BEAN_NAME)
+@Stateless
 public class UserServiceBean implements UserService {
 
     @PersistenceContext(unitName = "weblibrary-unit")
     private EntityManager entityManager;
 
+    @Override
     public User getUser(Long userId) {
         UserDataService userDataService = WebLibraryDataServiceFactory.getUserDataService(entityManager);
         User result = userDataService.getUser(userId);

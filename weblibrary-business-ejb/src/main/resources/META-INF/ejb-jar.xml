@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ejb-jar xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd"
     version="3.1">
     <enterprise-beans>
         <session>
@@ -8,5 +8,44 @@
             <ejb-class>hu.tamaas.weblibrary.business.ejb.service.UserServiceBean</ejb-class>
             <transaction-type>Container</transaction-type>
         </session>
+        <session>
+            <ejb-name>HelloServiceBean</ejb-name>
+            <ejb-class>hu.tamaas.weblibrary.business.ejb.service.HelloServiceBean</ejb-class>
+            <transaction-type>Container</transaction-type>
+        </session>
     </enterprise-beans>
 </ejb-jar>
+
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:s="urn:java:ee:ejb"
+         xmlns:t="urn:java:hu.tamaas.weblibrary.business.ejb.service" version="3.2">
+ 
+    <s:enterprise-beans>
+        <s:session>
+            <t:UserServiceBean>
+                <s:ejb-name>UserServiceBean</s:ejb-name>
+                <s:ejb-class>
+                    <t:UserServiceBean />
+                </s:ejb-class>
+                <s:remote>
+                    <t:UserService />
+                </s:remote>
+                <s:session-type-stateless/>
+                <s:transaction-type-container/>
+            </t:UserServiceBean>
+            <t:HelloServiceBean>
+                <s:ejb-name>HelloServiceBean</s:ejb-name>
+                <s:ejb-class>
+                    <t:HelloServiceBean />
+                </s:ejb-class>
+                <s:remote>
+                    <t:HelloService />
+                </s:remote>
+                <s:session-type-stateless/>
+            </t:HelloServiceBean>
+        </s:session>
+    </s:enterprise-beans>
+</ejb-jar>
+-->

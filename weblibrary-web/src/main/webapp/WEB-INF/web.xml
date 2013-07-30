@@ -8,6 +8,10 @@
         <param-value>${PROJECT_STAGE}</param-value>
     </context-param>
     <context-param>
+        <param-name>javax.faces.FACELETS_DEVELOPMENT</param-name>
+        <param-value>${FACELETS_DEVELOPMENT}</param-value>
+    </context-param>
+    <context-param>
         <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
         <param-value>true</param-value>
     </context-param>

@@ -36,6 +36,37 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ear-plugin</artifactId>
                 <version>2.8</version>
+                <configuration>
+                    <!--displayName>Debate</displayName-->
+                    <modules>
+                        <ejbModule>
+                            <groupId>hu.tamaas.weblibrary</groupId>
+                            <artifactId>weblibrary-business-ejb</artifactId>
+                        </ejbModule>
+                    </modules>
+                    <generateApplicationXml>true</generateApplicationXml>
+                    <!-- The following setting builds the EAR file in a format suitable for Glassfish deployment.
+                    With this we don't have to copy the libs into Glassfish's appserver lib directory -->
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.3</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
             </plugin>
         </plugins>
     </build>

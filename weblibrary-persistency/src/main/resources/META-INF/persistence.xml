@@ -3,12 +3,16 @@
   <persistence-unit name="weblibrary-unit" transaction-type="JTA">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <jta-data-source>jdbc/webLibraryDS</jta-data-source>
-    <class>hu.tamaas.weblibrary.persistence.entity.User</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <!--class>hu.tamaas.weblibrary.persistence.entity.User</class-->
     <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
     <validation-mode>CALLBACK</validation-mode>
     <properties>
       <!-- ORM production setup (JavaEE) -->
       <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+      <!-- GLASSFISH SPECIFIC: The following property is necessary for
+      deployment within Glassfish.  Note that each application
+      server vendor has its own unique value. -->
       <property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.SunONETransactionManagerLookup"/>
       <property name="hibernate.id.new_generator_mappings" value="true"/>
       <!-- ORM JSR303 activation -->

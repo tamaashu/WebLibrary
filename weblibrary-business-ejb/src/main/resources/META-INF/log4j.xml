@@ -1,50 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<configuration status="debug" strict="true" name="XMLConfigTest"
-               packages="org.apache.logging.log4j.test">
-  <properties>
-    <property name="filename">target/test.log</property>
-  </properties>
-  <filter type="ThresholdFilter" level="trace"/>
- 
-  <appenders>
-    <appender type="Console" name="STDOUT">
-      <layout type="PatternLayout" pattern="%m MDC%X%n"/>
-      <filters>
-        <filter type="MarkerFilter" marker="FLOW" onMatch="DENY" onMismatch="NEUTRAL"/>
-        <filter type="MarkerFilter" marker="EXCEPTION" onMatch="DENY" onMismatch="ACCEPT"/>
-      </filters>
-    </appender>
-    <appender type="Console" name="FLOW">
-      <layout type="PatternLayout" pattern="%C{1}.%M %m %ex%n"/><!-- class & line number -->
-      <filters>
-        <filter type="MarkerFilter" marker="FLOW" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
-        <filter type="MarkerFilter" marker="EXCEPTION" onMatch="ACCEPT" onMismatch="DENY"/>
-      </filters>
-    </appender>
-    <appender type="File" name="File" fileName="${filename}">
-      <layout type="PatternLayout">
-        <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration debug="true"
+                     xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+   <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="%d{yyyy-MM-dd-HH:mm:ss} %5p %c{1} - %m%n"/>
       </layout>
-    </appender>
-    <appender type="List" name="List">
-    </appender>
-  </appenders>
- 
-  <loggers>
-    <logger name="org.apache.logging.log4j.test1" level="debug" additivity="false">
-      <filter type="ThreadContextMapFilter">
-        <KeyValuePair key="test" value="123"/>
-      </filter>
-      <appender-ref ref="STDOUT"/>
-    </logger>>
- 
-    <logger name="org.apache.logging.log4j.test2" level="debug" additivity="false">
-      <appender-ref ref="File"/>
-    </logger>>
- 
-    <root level="trace">
-      <appender-ref ref="List"/>
-    </root>
-  </loggers>
- 
-</configuration>
+   </appender>
+
+   <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
+      <param name="MaxFileSize" value="512KB" />
+      <param name="MaxBackupIndex" value="10" />
+      <param name="File" value="c:/glassfish4/glassfish.log"/>
+      <param name="append" value="false"/>
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="%d{ABSOLUTE} %-5p [%c{1}] %m%n"/>
+      </layout>
+   </appender>
+   
+   <logger name="hu.tamaas">
+        <level value="DEBUG"/>
+   </logger>
+
+   <root>
+      <level value="INFO"/>
+      <appender-ref ref="consoleAppender"/>
+      <appender-ref ref="fileAppender"/>
+   </root>
+</log4j:configuration>

@@ -4,7 +4,6 @@
  */
 package hu.tamaas.weblibrary.business.ejb.service.interfaces;
 
-import hu.tamaas.weblibrary.persistence.entity.User;
 import javax.ejb.Remote;
 
 /**
@@ -12,9 +11,9 @@ import javax.ejb.Remote;
  * @author edi
  */
 @Remote
-public interface UserService {
+public interface HelloService {
     
-    public static final String BEAN_NAME = UserService.class.getName();
+    public static final String BEAN_NAME = HelloService.class.getName();
     
-    public User getUser(Long userId);
+    public String getHello(String name);
 }
